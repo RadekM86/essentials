@@ -5,11 +5,13 @@ const StyledCard = styled.div`
     width: 100%;
     height: 200px;
     border-radius: 16px;
-    background-color: ${({theme})=>theme.colors.background}
-    box-shadow: -2px -2px 8px rgba(255,255,255,.9), 2px 2px 8px rgba(0,0,0,.1);
+    background-color: ${({theme})=>theme.colors.background};
+    box-shadow: -2px -2px 8px ${({theme})=>theme.colors.specular}, 
+    2px 2px 8px ${({theme})=>theme.colors.shadow};
 
     :hover{
-        box-shadow: -2px -2px 12px rgba(255,255,255,.9), 6px 6px 14px rgba(0,0,0,.1);
+        box-shadow: -2px -2px 12px ${({theme})=>theme.colors.specular}, 
+        6px 6px 14px ${({theme})=>theme.colors.shadow};
     }
 `;
 

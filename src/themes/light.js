@@ -5,6 +5,10 @@ export default {
       buttonBackground: "#5E81AC",
       textColor: "#2E3440",
       buttonColor: "#ECEFF4",
-      accent: "8000FF",
+      accent: "#8000FF",
+      inset: "#2E3440",
+      shadow: "rgba(0,0,0,.1)",
+      specular: "rgba(255,255,255,.9)",
+      buttonText: "#ECEFF4",
     }
   };
