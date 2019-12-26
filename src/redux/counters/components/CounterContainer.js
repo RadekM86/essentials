@@ -1,9 +1,41 @@
-import React, {Fragment} from 'react';
+import React from 'react';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
+import actions from '../duck/actions';
 import Counter from '../../../components/Counter'
 import Card from '../../../components/Card'
 
-const CounterContainer = ({children, count}) =>  {
+const StyledButton = styled.button`
+    background-color: ${({theme}) => theme.colors.accent};
+    padding: 8px 16px;
+    border-radius: 24px;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: 40px;
+    right: 16px;
+    color: ${({theme}) => theme.colors.buttonText};
+
+    :hover{
+        box-shadow: inset 2px 2px 4px ${({theme}) => theme.colors.shadow}
+    }
+`;
+
+function Button(props) {
+    const {resetCount, children} = props;
+    const resetClick = () => {
+        resetCount()
+    }
+    return (
+        <StyledButton onClick={resetClick}>
+            {children}
+        </StyledButton>
+    )
+}
+
+
+const CounterContainer = ({children, count, resetCount}) =>  {
     const colorSwitch = () => {
         if (count > 30) {
             return "negative"
@@ -20,7 +52,9 @@ const CounterContainer = ({children, count}) =>  {
             content={<Counter counter={count}/>}
             color={colorSwitch()}
             description="Increment Counter"
-        />
+        >
+            <Button resetCount={resetCount}>Reset</Button>
+        </Card>
     )
 }
 
@@ -28,4 +62,10 @@ const mapStateToProps = state => ({
     count: state.count
 });
 
-export default connect(mapStateToProps, {})(CounterContainer)
+const mapDispatchToProps = dispatch => ({
+    resetCount: () => dispatch(actions.resetCount())
+});
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer)

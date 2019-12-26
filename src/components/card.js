@@ -8,6 +8,7 @@ const StyledCard = styled.div`
     background-color: ${({theme})=>theme.colors.background};
     box-shadow: -2px -2px 8px ${({theme})=>theme.colors.specular}, 
     2px 2px 8px ${({theme})=>theme.colors.shadow};
+    position: relative;
 
     :hover{
         box-shadow: -2px -2px 12px ${({theme})=>theme.colors.specular}, 
@@ -54,8 +55,8 @@ export default function Card(props) {
         className={wide ? 'wide' : ''}
         >
             {contentDiv}
-            {children}
             {descriptionDiv}
+            {children}
         </StyledCard>
     )
 }
