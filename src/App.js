@@ -28,7 +28,9 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(
     stored === "true" ? true : false
   );
-  const [isMobile, setMobile] = useState(false);
+  const [isMobile, setMobile] = useState(
+    window.innerWidth < 450 ? true : false
+  );
 
   const updateWindowSize = () => {
     window.innerWidth < 450 ? setMobile(true) : setMobile(false)
