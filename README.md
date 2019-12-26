@@ -1,3 +1,3 @@
 # essentials
 
-atomic components for non-basic use
+Essential components for intelligible web
