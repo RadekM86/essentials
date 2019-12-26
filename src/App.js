@@ -7,46 +7,19 @@ import './App.css';
 
 import _ from 'lodash';
 
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+
 
 import Header from './components/Header';
 import Card from './components/Card';
 import Container from './components/Container';
 import Toggle from './components/Toggle';
-import Counter from './components/Counter';
-import AddButton from './components/AddButton';
+import CounterContainer from './redux/counters/components/CounterContainer';
+import AddButton from './redux/counters/components/AddButton';
 
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import lightTheme from './themes/light';
 import darkTheme from './themes/dark';
-
-const counterBreakpoints = {
-  min: 0,
-  mean: 50,
-  max: 100
-}
-let counter = 0;
-
-function count(state = counter, action) {
-  switch (action.type) {
-    case 'INCREMENT':
-      counter ++
-      return {...state, counter: counter}
-    case 'DECREMENT':
-      counter --
-      return  {...state, counter: counter}
-    case 'RESET':
-      counter = 0;
-      return  {...state, counter: 0}
-    default:
-      return state
-  }
-}
-
-const store = createStore(count, composeWithDevTools())
-window.store = store;
 
 
 const GlobalStyle = createGlobalStyle`
@@ -99,21 +72,16 @@ function App() {
             }/>
         </Header>
         <Container>
-          <Card>
+          <Card wide={true}>
             <div className="center">
               <AddButton color="accent">+</AddButton>
             </div>
           </Card>
-          <Card wide={true} />
           <Card 
-            content={<Counter count={30}/>}
+            content={<CounterContainer/>}
             color="cold"
             description="Increment Counter"
           />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
         </Container>
       </div>
     </ThemeProvider>

@@ -1,0 +1,7 @@
+const ADD_DEVICE = 'ADD_DEVICE'
+const RESET_DEVICES = 'RESET_DEVICES'
+
+export default {
+    ADD_DEVICE,
+    RESET_DEVICES,
+}

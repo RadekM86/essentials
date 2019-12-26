@@ -11,7 +11,11 @@ const StyledContainer = styled.div`
     padding: 16px 8px;
 
     & >.wide {
-        grid-column: 2/4
+        grid-column: 1/3
+    }
+
+    @media (max-width: 450px) {
+        grid-template-columns: repeat(2, 1fr);
     }
 `;
 

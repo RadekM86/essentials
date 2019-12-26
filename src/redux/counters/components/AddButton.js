@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+import actions from '../duck/actions';
 
 const StyledAdd = styled.button`
     height: 100px;
@@ -36,11 +39,22 @@ const StyledAdd = styled.button`
 
 `;
 
-export default function AddButton(props) {
-    const {color, children, hollow} = props;
+const  AddButton = props => {
+    const {color, children, hollow, addCount} = props;
+
+    const increment = () => {
+        addCount()
+    }
+
     return (
-        <StyledAdd color={color} hollow={hollow} className="ripple">
+        <StyledAdd color={color} hollow={hollow} className="ripple" onClick={increment}>
             {children}
         </StyledAdd>
     )
-}
+};
+
+const mapDispatchToProps = dispatch => ({
+    addCount: () => dispatch(actions.addCount())
+});
+
+export default connect(null, mapDispatchToProps)(AddButton)

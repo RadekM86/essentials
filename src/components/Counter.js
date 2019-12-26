@@ -3,16 +3,16 @@ import styled from 'styled-components';
 
 
 const StyledCounter = styled.div`
-    font-size: 6em;
+    font-size: 4em;
     font-weight: 200;
     color: ${({theme}) => theme.colors.textColor};
 `;
 
 export default function Counter(props) {
-    const {count} = props;
+    const {counter} = props;
     return (
         <StyledCounter>
-            {count}
+            <p>{counter}</p>
         </StyledCounter>
     )
 }
