@@ -77,11 +77,7 @@ function App() {
               <AddButton color="accent">+</AddButton>
             </div>
           </Card>
-          <Card 
-            content={<CounterContainer/>}
-            color="cold"
-            description="Increment Counter"
-          />
+          <CounterContainer />
         </Container>
       </div>
     </ThemeProvider>
