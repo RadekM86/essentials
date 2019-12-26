@@ -4,15 +4,24 @@ import styled from 'styled-components';
 const StyledHeader = styled.div`
     width: 100%;
     padding: 16px;
-    background-color: #FCFCFC;
-    box-shadow: 0px 2px 4px rgba(0,0,0,.1)
+    background-color: ${({theme})=>theme.colors.background};
+    box-shadow: 0px 2px 4px rgba(0,0,0,.1);
+    position: relative;
+    z-index: 10;
+    display: flex;
+    & > * {
+        margin-left: auto;
+    }
+    & > .App-logo {
+        margin-left: 0;
+    }
 `;
 
 
-export default function Header(props) {
+export default function Header({children}) {
     return (
         <StyledHeader>
-            {props.children}
+            {children}
         </StyledHeader>
     )
 }
