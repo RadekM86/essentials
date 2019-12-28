@@ -5,16 +5,15 @@ import logo_mobile from './logo_mobile.svg';
 import logo_mobile_dark from './logo_mobile_dark.svg';
 import './App.css';
 
+import { Home } from './pages';
+
 import _ from 'lodash';
 
 
 
 import Header from './components/Header';
-import Card from './components/Card';
-import Container from './components/Container';
 import Toggle from './components/Toggle';
-import CounterContainer from './redux/counters/components/CounterContainer';
-import AddButton from './redux/counters/components/AddButton';
+
 
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
@@ -71,14 +70,7 @@ function App() {
               }
             }/>
         </Header>
-        <Container>
-          <Card wide={true}>
-            <div className="center">
-              <AddButton color="accent">+</AddButton>
-            </div>
-          </Card>
-          <CounterContainer />
-        </Container>
+        <Home />
       </div>
     </ThemeProvider>
   );
