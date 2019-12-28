@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import actions from '../duck/actions';
-import Counter from '../../../components/Counter'
-import Card from '../../../components/Card'
+import Counter from '../../../components/Counter';
+import Card from '../../../components/Card';
+import { withRouter } from 'react-router-dom';
 
 const StyledButton = styled.button`
     background-color: ${({theme}) => theme.colors.accent};
@@ -68,4 +69,4 @@ const mapDispatchToProps = dispatch => ({
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CounterContainer))

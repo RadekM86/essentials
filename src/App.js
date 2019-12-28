@@ -5,6 +5,12 @@ import logo_mobile from './logo_mobile.svg';
 import logo_mobile_dark from './logo_mobile_dark.svg';
 import './App.css';
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
 import { Home } from './pages';
 
 import _ from 'lodash';
@@ -52,9 +58,23 @@ function App() {
 
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+      <Router>
       <div className="App">
         <GlobalStyle />
-        <Header>
+        <Header 
+          navigation={
+            <React.Fragment>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Toggle 
+              onClick={() => {
+                setIsDarkMode(!isDarkMode)
+                localStorage.setItem("isDarkMode", !isDarkMode);
+                }
+              }/>
+             </ React.Fragment>
+          }
+        >
           <img src={
             isMobile
             ? isDarkMode 
@@ -63,15 +83,13 @@ function App() {
             : isDarkMode 
               ? logo_dark 
               : logo} className="App-logo" alt="logo" />
-          <Toggle 
-            onClick={() => {
-              setIsDarkMode(!isDarkMode)
-              localStorage.setItem("isDarkMode", !isDarkMode);
-              }
-            }/>
         </Header>
-        <Home />
+        <div className="container">
+          <Route exact path="/" component={Home} />
+          {/* <Route path="/about" component={About} /> */}
+        </div>
       </div>
+      </Router>
     </ThemeProvider>
   );
 }

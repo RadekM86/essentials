@@ -9,7 +9,7 @@ const StyledHeader = styled.div`
     position: relative;
     z-index: 10;
     display: flex;
-    & > * {
+    & > nav.navigation {
         margin-left: auto;
     }
     & > .App-logo {
@@ -18,10 +18,11 @@ const StyledHeader = styled.div`
 `;
 
 
-export default function Header({children}) {
+export default function Header({children, navigation}) {
     return (
-        <StyledHeader>
+        <StyledHeader >
             {children}
+            <nav className="navigation">{navigation}</nav>
         </StyledHeader>
     )
 }

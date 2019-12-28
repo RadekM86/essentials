@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import actions from '../duck/actions';
+import { withRouter } from 'react-router-dom';
 
 const StyledAdd = styled.button`
     height: 100px;
@@ -57,4 +58,4 @@ const mapDispatchToProps = dispatch => ({
     addCount: () => dispatch(actions.addCount())
 });
 
-export default connect(null, mapDispatchToProps)(AddButton)
+export default withRouter(connect(null, mapDispatchToProps)(AddButton))
