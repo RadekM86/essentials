@@ -7,6 +7,9 @@ const StyledNav = styled.nav`
     flex-direction: row;
     justify-content: flex-end;
     align-content: space-between;
+    & > * {
+        margin-left: 16px;
+    }
 `;
 
 export default function Navigation({children}) {

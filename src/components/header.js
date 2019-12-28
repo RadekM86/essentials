@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Navigation from './Navigation';
 
 const StyledHeader = styled.div`
     width: 100%;
@@ -22,7 +23,7 @@ export default function Header({children, navigation}) {
     return (
         <StyledHeader >
             {children}
-            <nav className="navigation">{navigation}</nav>
+            <Navigation className="navigation">{navigation}</Navigation>
         </StyledHeader>
     )
 }
