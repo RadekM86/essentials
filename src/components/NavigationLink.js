@@ -15,15 +15,15 @@ const StyledLink = styled(Link)`
         width: 0;
         position: absolute;
         border-style: none;
-        border-bottom: solid 3px transparent;
+        border-bottom: solid 4px transparent;
         transition: all 0.4s ease;
-        bottom: -3px;
+        bottom: -4px;
     }
 
     & > hr.underline {
         width: 100%;
         border-style: none;
-        border-bottom: solid 3px ${({theme}) => theme.colors.accent}
+        border-bottom: solid 4px ${({theme}) => theme.colors.accent}
     }
 `;
 

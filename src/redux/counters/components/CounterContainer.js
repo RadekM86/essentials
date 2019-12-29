@@ -38,6 +38,9 @@ function Button(props) {
 
 const CounterContainer = ({children, count, resetCount}) =>  {
     const colorSwitch = () => {
+        if (count < -20 ) {
+            return "navy"
+        }
         if( count > 30 ) {
             return "critical"
         }
