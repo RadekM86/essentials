@@ -19,5 +19,6 @@ export default {
       grey: "#607D8B",
       baby: "#E91E63",
       navy: "#303F9F",
+      critical: "#D32F2F",
     }
   };
