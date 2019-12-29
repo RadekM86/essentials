@@ -10,7 +10,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import { Home } from './pages';
+import { Home, About } from './pages';
 
 import _ from 'lodash';
 
@@ -82,7 +82,7 @@ function App() {
         </Header>
         <div className="container">
           <Route exact path="/" component={Home} />
-          {/* <Route path="/about" component={About} /> */}
+          <Route path="/about" component={About} />
         </div>
       </div>
       </Router>
