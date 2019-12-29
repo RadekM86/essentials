@@ -8,7 +8,6 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom';
 
 import { Home } from './pages';
@@ -17,15 +16,12 @@ import _ from 'lodash';
 
 
 
-import Header from './components/Header';
-import Toggle from './components/Toggle';
-
+import { Header, Toggle, NavigationLink }  from './components';
 
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import lightTheme from './themes/light';
 import darkTheme from './themes/dark';
-
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -64,8 +60,8 @@ function App() {
         <Header 
           navigation={
             <React.Fragment>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
+            <NavigationLink exact to="/">Home</NavigationLink>
+            <NavigationLink to="/about">About</NavigationLink>
             <Toggle 
               onClick={() => {
                 setIsDarkMode(!isDarkMode)
