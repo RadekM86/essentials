@@ -1,15 +1,18 @@
 import React from 'react';
-import Container from '../components/Container';
-import Card from '../components/Card';
-import { AddButton, CounterContainer } from '../redux/counters/index';
+import { Container, Card, FlexContainer } from '../components';
+import { AddButton, SubtractButton, CounterContainer } from '../redux/counters/index';
 
 export default function Home() {
     return (
         <Container>
             <Card wide={true}>
-                <div className="center">
+                <FlexContainer 
+                    className="center"
+                    alignment="center"
+                >
                     <AddButton color="accent">+</AddButton>
-                </div>
+                    <SubtractButton color="cold">-</SubtractButton>
+                </FlexContainer>
             </Card>
             <CounterContainer />
         </Container>
