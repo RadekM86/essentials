@@ -1,0 +1,7 @@
+const ADD_NOTE = 'ADD_DEVICE'
+const CLEAR_NOTES = 'CLEAR_NOTES'
+
+export default {
+    ADD_NOTE: ADD_NOTE,
+    CLEAR_NOTES: CLEAR_NOTES,
+}

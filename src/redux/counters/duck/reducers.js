@@ -1,7 +1,5 @@
 import types from './types'
-
-let counter = 0;
-
+import { loadState } from '../../localStorage';
 const counterBreakpoints = {
     min: 0,
     mean: 50,
@@ -9,17 +7,16 @@ const counterBreakpoints = {
   };
   
 
+let counter = loadState().count || 0;
+
 const countReducer = (state = counter, action) => {
   switch (action.type) {
     case types.INCREMENT_COUNTER:
-      counter++
-      return counter
+      return counter++
     case types.DECREMENT_COUNTER:
-      counter--
-      return  counter
+      return  counter --
     case types.RESET_COUNTER:
-      counter = 0;
-      return  counter
+      return  0
     default:
       return state
   }
