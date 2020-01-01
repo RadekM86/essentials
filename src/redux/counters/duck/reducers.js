@@ -7,7 +7,7 @@ const counterBreakpoints = {
   };
   
 
-let counter = loadState().count || 0;
+let counter = loadState() && loadState().count ? loadState().count : 0;
 
 const countReducer = (state = counter, action) => {
   switch (action.type) {
@@ -16,6 +16,7 @@ const countReducer = (state = counter, action) => {
     case types.DECREMENT_COUNTER:
       return  counter --
     case types.RESET_COUNTER:
+      counter = 0
       return  0
     default:
       return state
