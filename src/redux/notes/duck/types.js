@@ -1,4 +1,4 @@
-const ADD_NOTE = 'ADD_DEVICE'
+const ADD_NOTE = 'ADD_NOTE'
 const CLEAR_NOTES = 'CLEAR_NOTES'
 
 export default {

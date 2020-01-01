@@ -10,7 +10,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import { Home, About } from './pages';
+import { Home, About, Notes } from './pages';
 
 import _ from 'lodash';
 
@@ -62,6 +62,7 @@ function App() {
             <React.Fragment>
             <NavigationLink exact to="/">Home</NavigationLink>
             <NavigationLink to="/about">About</NavigationLink>
+            <NavigationLink to="/notes">Notes</NavigationLink>
             <Toggle 
               onClick={() => {
                 setIsDarkMode(!isDarkMode)
@@ -83,6 +84,7 @@ function App() {
         <div className="container">
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
+          <Route path="/notes" component={Notes} />
         </div>
       </div>
       </Router>
