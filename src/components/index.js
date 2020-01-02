@@ -9,4 +9,5 @@ export { default as Navigation } from './Navigation';
 export { default as NavigationLink } from './NavigationLink';
 export { default as Note } from  './Note';
 export { default as Paragraph } from './Paragraph';
+export { default as SimpleForm } from './SimpleForm';
 export { default as Toggle } from './Toggle';

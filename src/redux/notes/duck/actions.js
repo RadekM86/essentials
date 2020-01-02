@@ -1,6 +1,6 @@
 import types from './types'
 
-const addNote = item => ({type: types.ADD_NOTE, item});
+const addNote = note => ({type: types.ADD_NOTE, note});
 const clearNotes = () => ({type: types.CLEAR_NOTES})
 
 export default {
