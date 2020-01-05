@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 import actions from '../duck/actions';
 import Counter from '../../../components/Counter';
 import Card from '../../../components/Card';
@@ -44,7 +45,7 @@ const CounterContainer = ({children, count, resetCount}) =>  {
         if( count > 30 ) {
             return "critical"
         }
-        if (count > 20 && count < 30) {
+        if (count > 20 && count <= 30) {
             return "negative"
         } 
         if (count > 10 && count <= 20) {
@@ -72,9 +73,9 @@ const mapStateToProps = state => ({
     count: state.count
 });
 
-const mapDispatchToProps = dispatch => ({
-    resetCount: () => dispatch(actions.resetCount())
-});
+const mapDispatchToProps = dispatch => (
+    bindActionCreators({resetCount: actions.resetCount}, dispatch)
+);
 
 
 

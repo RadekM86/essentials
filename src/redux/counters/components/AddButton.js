@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux';
 import actions from '../duck/actions';
 import { withRouter } from 'react-router-dom';
 
@@ -54,8 +54,8 @@ const  AddButton = props => {
     )
 };
 
-const mapDispatchToProps = dispatch => ({
-    addCount: () => dispatch(actions.addCount())
-});
+const mapDispatchToProps = dispatch => (
+    bindActionCreators({addCount: actions.addCount}, dispatch)
+);
 
 export default withRouter(connect(null, mapDispatchToProps)(AddButton))
