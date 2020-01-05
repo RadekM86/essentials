@@ -5,6 +5,8 @@ import logo_mobile from './logo_mobile.svg';
 import logo_mobile_dark from './logo_mobile_dark.svg';
 import './App.css';
 
+import styled, {keyframes} from 'styled-components';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -22,6 +24,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import lightTheme from './themes/light';
 import darkTheme from './themes/dark';
+
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -44,6 +47,10 @@ function App() {
     window.innerWidth < 450 ? true : false
   );
 
+  const [isRoot, setHome] = useState(
+    window.location.pathname === '/' ? true : false
+  )
+
   const updateWindowSize = () => {
     window.innerWidth < 450 ? setMobile(true) : setMobile(false)
   }
@@ -52,12 +59,17 @@ function App() {
     window.addEventListener('resize', _.throttle(updateWindowSize, 300));
   })
 
+
+  console.log(window.location.pathname);
+  
+
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <Router>
-      <div className="App">
+      <div className="App" home={isRoot}>
         <GlobalStyle />
         <Header 
+          home={isRoot}
           navigation={
             <React.Fragment>
             <NavigationLink exact to="/">Home</NavigationLink>

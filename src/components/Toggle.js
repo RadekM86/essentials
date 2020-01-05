@@ -25,7 +25,7 @@ export default function Toggle(props) {
     width: 40px;
     height: 22px;
     border-radius: 16px;
-    background: ${({theme}) => theme.colors.background};
+    background: 'transparent';
     box-shadow: inset -2px -2px 4px ${({theme})=>theme.colors.specular}, 
         inset 4px 4px 4px ${({theme})=>theme.colors.shadow};
     cursor: pointer;
@@ -48,8 +48,6 @@ export default function Toggle(props) {
     height: 24px;
     &:checked + ${ToggleLabel} {
       background-color: ${({theme}) => theme.colors.accent};
-      box-shadow: -2px -2px 4px ${({theme})=>theme.colors.specular}, 
-        4px 4px 4px ${({theme})=>theme.colors.shadow};
       &::after {
         content: "✹";
         display: block;
