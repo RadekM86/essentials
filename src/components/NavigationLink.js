@@ -5,7 +5,8 @@ import { Link, withRouter } from 'react-router-dom';
 const StyledLink = styled(Link)`
     color: ${({theme}) => theme.colors.textColor};
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 0.875em;
     position: relative;
     :active {
         color: ${({theme}) => theme.colors.accent};
