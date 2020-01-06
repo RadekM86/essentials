@@ -38,6 +38,7 @@ export default function Toggle(props) {
       margin: 3px;
       background: ${({theme}) => theme.colors.buttonText};
       transition: 0.2s ease;
+      line-height:16px;
     }
   `;
   const StyledToggle = styled.input`
@@ -56,6 +57,7 @@ export default function Toggle(props) {
         height: 16px;
         margin-left: 20px;
         transition: 0.2s ease;
+        line-height:16px;
       }
     }
   `;
