@@ -10,13 +10,15 @@ const StyledNote = styled.div`
     }
 `;
 
-export default function Note({note, text}) {
-    if (note && note.length) {
-        return (
-            <StyledNote>
-                <h1>{note}</h1>
-                <p>{text}</p>
-            </StyledNote>
-        )
-    } return null;
+export default function Note({ note, text }) {
+    return (
+        <React.Fragment>
+            {note && note.length
+                ? <StyledNote>
+                    <h1>{note}</h1>
+                    <p>{text}</p>
+                </StyledNote>
+                : null}
+        </React.Fragment>
+    )
 }
