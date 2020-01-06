@@ -6,7 +6,7 @@ export default function Components() {
     return (
         <Container>
             <Card wide={true}>
-                <FlexContainer 
+                <FlexContainer
                     className="center"
                     alignment="center"
                 >

@@ -8,6 +8,5 @@ export default function Material() {
             <Chart />
             <Button variant="contained" >Button</Button>
         </div>
-
     )
 }

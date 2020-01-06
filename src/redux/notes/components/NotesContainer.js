@@ -27,7 +27,6 @@ const NotesContainer = ({notes}) => {
     )
 }
 
-
 const mapStateToProps = state => ({
     notes: state.notes
 });
@@ -35,7 +34,5 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     clearNotes: () => dispatch(actions.clearNotes())
 });
-
-
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NotesContainer))

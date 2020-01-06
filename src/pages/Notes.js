@@ -1,10 +1,7 @@
 import React from 'react';
-import { Container, Card, FlexContainer, Note } from '../components';
 import styled from 'styled-components';
 
 import { NotesContainer, AddNoteForm } from '../redux/notes'
-
-// import { } from '../redux/notes/index';
 
 const Layout = styled.div`
     width: 100%;
@@ -29,11 +26,11 @@ const H1 = styled.h1`
 export default function Notes() {
     return (
         <>
-        <H1>NOTES</H1>
-        <Layout className="notes-layout">
-            <NotesContainer/>
-            <AddNoteForm className="add-form"/>
-        </Layout>
+            <H1>NOTES</H1>
+            <Layout className="notes-layout">
+                <NotesContainer />
+                <AddNoteForm className="add-form" />
+            </Layout>
         </>
     )
 }
