@@ -13,6 +13,9 @@ const Layout = styled.div`
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    & > .add-form {
+        justify-self: flex-end;
+    }
 `;
 
 const H1 = styled.h1`
@@ -27,9 +30,9 @@ export default function Notes() {
     return (
         <>
         <H1>NOTES</H1>
-        <Layout>
+        <Layout className="notes-layout">
             <NotesContainer/>
-            <AddNoteForm />
+            <AddNoteForm className="add-form"/>
         </Layout>
         </>
     )

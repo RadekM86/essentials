@@ -18,6 +18,12 @@ const StyledHeader = styled.h1`
     font-size: 6em;
     font-family: 'Playfair Display', serif;
     font-weight: 500;
+    @media (max-width: 800px) {
+        font-size: 3em;
+    }
+    @media (max-width: 450px) {
+        font-size: 2em;
+    }
 `;
 
 const StyledContainer = styled.div`

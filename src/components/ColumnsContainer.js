@@ -11,11 +11,11 @@ const StyledContainer = styled.div`
     grid-column-gap: 16px;
     grid-row-gap: 16px;
 
-    @media (max-width: 450px) {
+    @media (max-width:800px) {
         grid-template-columns: repeat(2, 1fr);
     }
-    @media (max-width: 768px) {
-        grid-template-columns: repeat(3, 1fr);
+    @media (max-width: 450px) {
+        grid-template-columns: 1fr;
     }
 `;
 

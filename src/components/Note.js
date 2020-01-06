@@ -10,10 +10,11 @@ const StyledNote = styled.div`
 
 `;
 
-export default function Note({children}) {
+export default function Note({note, text}) {
     return (
         <StyledNote>
-            {children}
+            <h1>{note}</h1>
+            <p>{text}</p>
         </StyledNote>
     )
 }

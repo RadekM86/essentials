@@ -3,7 +3,7 @@ import types from './types';
 
 const initialListOfNotes = {
     listName: 'notes',
-    list: [{note: 'test', text: 'note text'}]
+    list: [{note: '', text: ''}]
   }
   
 const notesReducer = (state = initialListOfNotes, action) => {

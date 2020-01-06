@@ -7,16 +7,23 @@ import styled from 'styled-components';
 
 const StyledLi = styled.li`
     list-style: none;
+    padding: 16px;
+    max-width: 250px;
+`;
+
+const StyledUl = styled.ul`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 `;
 
 const NotesContainer = ({notes}) => {
-    console.log(notes);
-    console.log(notes.list);
-    
     return (
-        <ul>
-            {notes.list.map(({note, text})=><StyledLi><Note>{note}{text}</Note></StyledLi>)}
-        </ul>
+        <StyledUl>
+            {notes.list.map(({note, text})=><StyledLi><Note note={note} text={text}/></StyledLi>)}
+        </StyledUl>
     )
 }
 

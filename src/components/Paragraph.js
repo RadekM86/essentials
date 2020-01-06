@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledParagraph = styled.p`
-    font-size: .875em;
+    font-size: 1em;
     font-weight: 500;
-
-    padding: 8px;
+    font-family: 'Playfair Display', serif;
+    padding: 16px;
     text-align: justify;
     color: ${({theme}) => theme.colors.textColor};
 `;
