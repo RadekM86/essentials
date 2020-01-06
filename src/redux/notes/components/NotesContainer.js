@@ -7,7 +7,6 @@ import styled from 'styled-components';
 
 const StyledLi = styled.li`
     list-style: none;
-    padding: 16px;
     max-width: 250px;
 `;
 
