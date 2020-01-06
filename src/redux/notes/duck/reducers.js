@@ -3,13 +3,13 @@ import types from './types';
 
 const initialListOfNotes = {
     listName: 'notes',
-    list: ['test note 2222']
+    list: [{note: 'test', text: 'note text'}]
   }
   
 const notesReducer = (state = initialListOfNotes, action) => {
     switch (action.type) {
       case types.ADD_NOTE:
-        return {...state, list: [...state.list, action.note]}
+        return {...state, list: [...state.list, {note: action.note, text: action.text}]}
       case types.CLEAR_NOTES:
         return  {...state, list: [...initialListOfNotes.list]}
       default:

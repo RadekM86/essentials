@@ -59,17 +59,12 @@ function App() {
     window.addEventListener('resize', _.throttle(updateWindowSize, 300));
   })
 
-
-  console.log(window.location.pathname);
-  
-
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <Router>
       <div className="App" home={isRoot}>
         <GlobalStyle />
         <Header 
-          home={isRoot}
           navigation={
             <React.Fragment>
             <NavigationLink exact to="/">Home</NavigationLink>

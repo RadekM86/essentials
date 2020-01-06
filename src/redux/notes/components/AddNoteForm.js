@@ -11,46 +11,73 @@ const StyledInput = styled.input`
     border-bottom: 1px solid ${({theme}) => theme.colors.textColor};
     color: ${({theme}) => theme.colors.textColor};
     background: none;
+    font-family: inherit;
     :focus{
         outline: none;
         border-bottom: 2px solid ${({theme}) => theme.colors.accent};
     }
 `;
 
+const StyledTextarea = styled.textarea`
+    border: none;
+    border-bottom: 1px solid ${({theme}) => theme.colors.textColor};
+    color: ${({theme}) => theme.colors.textColor};
+    background: none;
+    font-family: inherit;
+    :focus{
+        outline: none;
+        border-bottom: 2px solid ${({theme}) => theme.colors.accent};
+    }
+
+`;
+
 const StyledForm = styled.form`
+    width: 20em;
     display: flex;
     flex-direction: column;
+    * {
+        margin: 2px;
+    }
 `;
 
 const StyledSubmit = styled.button`
-    width: 2em;
     height: 2em;
-    border: 1px solid ${({theme}) => theme.colors.accent};
-
+    border:none;
+    outline: none;
+    border-radius: 4px;
+    font-weight: 600;
+    color: ${({theme})=>theme.colors.buttonText};
+    background-color: ${({theme}) => theme.colors.accent};
+    :hover{
+        background: ${({theme})=>theme.gradients.plum};
+    }
 `;
 
 const AddNoteForm = props => {
     const {addNote} = props;
 
     const notesInput = React.createRef();
+    const textInput = React.createRef();
 
     const submitHandler = (e) => {
         e.preventDefault();
-        addNote(notesInput.current.value);
-        notesInput.current.value = ""
+        addNote(notesInput.current.value, textInput.current.value);
+        notesInput.current.value = "";
+        textInput.current.value = "";
     }
 
         return (
             <StyledForm onSubmit={submitHandler}>
                 <StyledInput type="text" placeholder="note title" ref={notesInput}/>
-                <StyledSubmit type="submit">+</StyledSubmit>
+                <StyledTextarea type="text" placeholder="note text" rows="5" ref={textInput}/>
+                <StyledSubmit type="submit">ADD NOTE</StyledSubmit>
             </StyledForm>
         )
     
 };
 
 const mapDispatchToProps = dispatch => ({
-    addNote:  note => dispatch(actions.addNote(note))
+    addNote:  (note,text) => dispatch(actions.addNote(note, text))
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(AddNoteForm))

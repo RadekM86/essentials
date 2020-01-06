@@ -11,11 +11,11 @@ const StyledLi = styled.li`
 
 const NotesContainer = ({notes}) => {
     console.log(notes);
-    console.log();
+    console.log(notes.list);
     
     return (
         <ul>
-            {notes.list.map(note=><StyledLi><Note>{note}</Note></StyledLi>)}
+            {notes.list.map(({note, text})=><StyledLi><Note>{note}{text}</Note></StyledLi>)}
         </ul>
     )
 }
